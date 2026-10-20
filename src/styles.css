@@ -130,6 +130,7 @@ h1 em, .result-empty h2 em, .method-card h2 em { font-style: normal; color: var(
 .icon-button { width: 29px; height: 29px; border: 1px solid var(--line); color: #8293a5; border-radius: 7px; display: grid; place-items: center; background: rgba(255,255,255,.018); }
 .icon-button:hover { color: var(--coral); border-color: rgba(255,132,111,.5); }
 .demo-banner { padding: 8px 10px; display: flex; align-items: center; gap: 7px; color: #d0af70; background: var(--amber-soft); border: 1px solid rgba(231,184,107,.18); border-radius: 7px; font-size: 9px; margin-top: 17px; }
+.live-banner { padding: 8px 10px; display: flex; align-items: center; gap: 7px; color: #a9e6cf; background: var(--mint-soft); border: 1px solid rgba(104,209,170,.22); border-radius: 7px; font-size: 9px; margin-top: 17px; }
 .verdict-card { display: flex; gap: 12px; align-items: flex-start; padding: 15px; margin-top: 18px; border-radius: 10px; border: 1px solid rgba(255,132,111,.22); background: var(--coral-soft); }
 .verdict-card.medium, .verdict-card.needs-verification, .verdict-card.suspicious { border-color: rgba(231,184,107,.25); background: var(--amber-soft); }
 .verdict-card.low, .verdict-card.likely-safe { border-color: rgba(104,209,170,.25); background: var(--mint-soft); }
