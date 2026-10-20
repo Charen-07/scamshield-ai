@@ -1,9 +1,9 @@
 # ScamShield AI backend
 
 This is a small FastAPI server for the ScamShield AI frontend. It currently
-uses a deterministic keyword and rule-based analyzer, so it works without an
-LLM key. The analysis function is kept separate in `app/main.py` so a future
-LLM extractor can replace it without changing the frontend response shape.
+uses Gemini for structured tactic extraction when `GEMINI_API_KEY` is set. If
+Gemini is unavailable, it automatically falls back to the deterministic local
+rules so the demo still works.
 
 ## Run it
 
@@ -32,6 +32,10 @@ uvicorn app.main:app --reload --port 8000
 
 The API is then available at `http://localhost:8000`.
 
+For Vercel, set the project Root Directory to `backend`. Vercel uses
+`backend/index.py` as the entry point. After the frontend is deployed, add its
+public URL to the backend environment variable `FRONTEND_ORIGIN`.
+
 ## Endpoints
 
 - `GET /api/health` returns `{ "status": "ok" }`.
@@ -49,5 +53,6 @@ Example request:
 
 The server allows requests from the frontend at `http://localhost:5173`.
 
-`.env.example` lists optional future LLM settings. They are not needed for the
-current rule-based fallback.
+`.env.example` lists the environment variable names. The real `backend/.env`
+file must never be uploaded to GitHub. Set `GEMINI_MODEL` to `gemini-3.8-flash`
+for the current fast model, or use another model available to your API key.
